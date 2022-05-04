@@ -16,7 +16,7 @@ jobs:
       - name: Create .config with AUDIT option
         run: sed -e 's/# CONFIG_AUDIT is not set/CONFIG_AUDIT=y/' Microsoft/config-wsl > .config
       - name: Make config
-        run: make silentoldconfig
+        run: make olddefconfig
       - name: Make kernel
         run: make -j$[$(grep cpu.cores /proc/cpuinfo | sort -u | sed 's/[^0-9]//g') + 1]
       - name: Archive kernel
