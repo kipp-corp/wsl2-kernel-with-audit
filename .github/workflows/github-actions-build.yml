@@ -1,5 +1,6 @@
 name: Build kernel for WSL2
 on:
+  push: {}
   schedule:
     - cron: '30 5 * * SUN'
 jobs:
